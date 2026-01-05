@@ -1,1 +1,0 @@
-Script ini bekerja dengan memanfaatkan shared secret RADIUS untuk mengirim request autentikasi ke server. Password akan diuji satu per satu dari wordlist, lalu respon server dianalisis untuk menentukan apakah autentikasi berhasil (Access-Accept) atau gagal (Access-Reject).
