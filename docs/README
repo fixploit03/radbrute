@@ -2,6 +2,10 @@ APA ITU SECRET RADIUS?
 ----------------------
 Secret RADIUS atau RADIUS shared secret adalah kata sandi bersama yang digunakan oleh RADIUS client, seperti access point, router, switch, atau VPN server, dan RADIUS server untuk mengamankan komunikasi pada proses autentikasi, otorisasi, dan akuntansi (AAA). Secret ini berfungsi sebagai kunci pengaman yang memastikan paket RADIUS benar-benar berasal dari perangkat yang sah serta melindungi informasi sensitif, terutama password pengguna, agar tidak dikirim dalam bentuk teks biasa. Secret RADIUS harus dikonfigurasikan sama persis di sisi client dan server serta dijaga kerahasiaannya, karena jika bocor dapat dimanfaatkan oleh penyerang untuk memalsukan permintaan autentikasi, melakukan brute force akun, atau menyalahgunakan akses jaringan.
 
+APA ITU RADCLIENT? 
+------------------
+Radclient adalah tools berbasis command line yang digunakan untuk mengirim dan menguji request langsung ke RADIUS server tanpa melalui perangkat jaringan seperti access point atau router, sehingga sering dimanfaatkan untuk melakukan testing dan troubleshooting proses autentikasi, otorisasi, dan akuntansi AAA. Tool ini merupakan bagian dari FreeRADIUS dan bekerja dengan mengirim paket RADIUS seperti Access-Request atau Accounting-Request menggunakan shared secret, kemudian menganalisis respon dari server seperti Access-Accept, Access-Reject, atau Access-Challenge, sehingga administrator jaringan maupun praktisi keamanan dapat memastikan konfigurasi RADIUS berjalan dengan benar atau melakukan simulasi pengujian keamanan secara terkontrol.
+
 GIMANA CARA KERJA RADBRUTE? 
 -----------------------------
 RADBRUTE bekerja dengan memanfaatkan shared secret RADIUS untuk mengirim request autentikasi ke server. Password akan diuji satu per satu dari wordlist, lalu respon server dianalisis untuk menentukan apakah autentikasi berhasil (Access-Accept) atau gagal (Access-Reject).
