@@ -5,3 +5,9 @@ Secret RADIUS atau RADIUS shared secret adalah kata sandi bersama yang digunakan
 GIMANA CARA KERJA RADBRUTE? 
 -----------------------------
 RADBRUTE bekerja dengan memanfaatkan shared secret RADIUS untuk mengirim request autentikasi ke server. Password akan diuji satu per satu dari wordlist, lalu respon server dianalisis untuk menentukan apakah autentikasi berhasil (Access-Accept) atau gagal (Access-Reject).
+
+GIMANA CARA MITIGASINYA? 
+------------------------
+1. Gunakan secret yang rumit
+2. Jangan reuse secret antar NAS / AP / Router
+3. Pantau LOG RADIUS
