@@ -1,0 +1,1 @@
+Script ini bekerja dengan membaca password satu per satu dari wordlist, kemudian menganalisis respon server untuk menentukan apakah autentikasi diterima (Access-Accept) atau ditolak (Access-Reject).
