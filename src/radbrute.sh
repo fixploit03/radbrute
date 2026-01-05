@@ -56,9 +56,15 @@ if [[ -z "${ip_nas}" ]]; then
 fi
 
 # Cek wordlist
-if [[ ! -f "${wordlist}" ]]; then
-	echo -e "${m}[-] ${p}Wordlist '${m}${wordlist}${p}' tidak ditemukan.${r}"
+if [[ -z "${wordlist}" ]]; then
+	echo -e "${m}[-] ${p}Wordlist belum dikonfigurasi.${r}"
 	exit 1
+else
+	# Kaga ditemukan
+	if [[ ! -f "${wordlist}" ]]; then
+		echo -e "${m}[-] ${p}Wordlist '${m}${wordlist}${p}' tidak ditemukan.${r}"
+		exit 1
+	fi
 fi
 
 # Banner
