@@ -1,12 +1,27 @@
 #!/bin/bash
 #
-#---------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------#
 #
 #.......: radbrute.sh
 #.......: Rofi (Fixploit03)
 #.......: https://github.com/fixploit03/radbrute
 #
-#---------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------#
+#
+# Tentang:
+# --------
+# RADBRUTE adalah script Bash sederhana yang digunakan untuk mencari kredensial 
+# pengguna RADIUS yang valid dengan cara mengirim request autentikasi ke server 
+# RADIUS menggunakan radclient.
+#
+# Cara Kerja:
+# -----------
+# Script ini bekerja dengan memanfaatkan shared secret RADIUS untuk mengirim 
+# request autentikasi ke server. Password akan diuji satu per satu dari wordlist, 
+# lalu respon server dianalisis untuk menentukan apakah autentikasi berhasil
+# (Access-Accept) atau gagal (Access-Reject).
+#
+#-------------------------------------------------------------------------------------#
 # For educational purposes only!
 
 # Variabel warna
@@ -77,7 +92,7 @@ echo -e "${m}|    __  ||       || |_|   ||  _   | |    __  ||       |  |   |  | 
 echo -e "${m}|   |  | ||   _   ||       || |_|   ||   |  | ||       |  |   |  |   |___ ${r}"
 echo -e "${m}|___|  |_||__| |__||______| |_______||___|  |_||_______|  |___|  |_______|${r}"
 echo -e "                                                                                  "
-echo -e "      ${h}Script Bash sederhana untuk mencari kredensial user yang valid${r}      "
+echo -e "      ${h}Script Bash sederhana untuk mencari kredensial pengguna RADIUS${r}      "
 echo -e "                      ${k}Dibuat oleh: ${p}Rofi (Fixploit03)${r}                  "
 echo -e "              ${k}Github: ${p}https://github.com/fixploit03/radbrute${r}        \n"
 
@@ -105,6 +120,6 @@ while read -r password; do
 	sleep 1
 done < "${wordlist}"
 
-# Ga ada password yang ditemukan
-echo -e "\n${m}[-] ${p}Tidak ada password yang valid ditemukan. Cobalah gunakan wordlist yang lain :)\n${r}"
+# Ga ada kredensial yang ditemukan
+echo -e "\n${m}[-] ${p}Tidak ada kredensial yang valid ditemukan. Cobalah gunakan wordlist yang lain :)\n${r}"
 exit 1
