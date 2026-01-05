@@ -25,6 +25,36 @@ user=""
 ip_nas=""
 wordlist=""
 
+# Cek IP RADIUS
+if [[ -z "${ip_radius}" ]]; then
+    echo -e "${m}[-] ${p}IP RADIUS belum dikonfigurasi.${r}"
+	exit 1
+fi
+
+# Cek port RADIUS
+if [[ -z "${port}" ]]; then
+	# Port default RADIUS = 1812 (UDP)
+	port="1812"
+fi
+
+# Cek secret RADIUS
+if [[ -z "${secret}" ]]; then
+	echo -e "${m}[-] ${p}Secret RADIUS belum dikonfigurasi.${r}"
+	exit 1
+fi
+
+# Cek user RADIUS
+if [[ -z "${user}" ]]; then
+	echo -e "${m}[-] ${p}User RADIUS belum dikonfigurasi.${r}"
+	exit 1
+fi
+
+# Cek IP NAS
+if [[ -z "${ip_nas}" ]]; then
+	echo -e "${m}[-] ${p}IP NAS belum dikonfigurasi.${r}"
+	exit 1
+fi
+
 # Cek wordlist
 if [[ ! -f "${wordlist}" ]]; then
 	echo -e "${m}[-] ${p}Wordlist '${m}${wordlist}${p}' tidak ditemukan.${r}"
