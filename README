@@ -1,0 +1,4 @@
+RADBRUTE
+--------
+
+RADBRUTE adalah script Bash sederhana yang digunakan untuk mencari kredensial pengguna RADIUS yang valid dengan cara mengirim request autentikasi ke server RADIUS menggunakan radclient.
