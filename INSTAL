@@ -1,0 +1,14 @@
+1. Update repositori Linux
+$ sudo apt-get update -y
+
+2. instal dependensi yang diperlukan
+$ sudo apt-get install git freeradius-utils -y
+
+3. Kloning repositori
+$ git clone https://github.com/fixploit03/radbrute.git
+
+4. Pindah direktori
+$ cd radbrute/src
+
+5. Kasih izin eksekusi
+$ chmod +x radbrute.sh
